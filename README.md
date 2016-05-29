@@ -3,7 +3,7 @@
 
 Rendered versions:
 
-http://ocefpaf.github.io/SciPyLA_2016_talk/
+http://ocefpaf.github.io/talk_conda_packaging
 
 Use the Makefile to create and manage the slides:
 
