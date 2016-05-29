@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Community powered conda packaging channel conda-forge</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="slides.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Community powered conda packaging channel <a href="https://conda-forge.github.io/">conda-forge</a></h1>
+  <h3 class="date">2016 DMAC</h3>
+</section>
+
+<section id="the-problem" class="slide level1">
+<h1>The problem</h1>
+<p>The <strong>Python scientific community</strong> always wanted a package manager that is <strong>cross platform</strong>, does not require <strong>sudo</strong>, and let's Python be awesome ;-)</p>
+<p>The conda package manager solved that problem, but created a new ones...</p>
+</section>
+<section id="the-problem-1" class="slide level1">
+<h1>The problem</h1>
+<ul>
+<li class="fragment">How to get software that is not in the <code>default</code> channel?</li>
+<li class="fragment">How to build the binaries to ensure they are compatible with other systems, and the default channel?</li>
+<li class="fragment">Which community channels are OK to use? (<code>anaconda search -t conda gdal</code> returns 48 options!)</li>
+</ul>
+</section>
+<section id="many-choices-is-not-always-good" class="slide level1">
+<h1>Many choices is not always good!</h1>
+<p>The <code>default</code> channel does not keep up with the pace of the scientific community and many users/communities channels were created to fill in that gap.</p>
+</section>
+<section id="many-choices-is-not-always-good-1" class="slide level1">
+<h1>Many choices is not always good!</h1>
+<p>That led to</p>
+<ul>
+<li class="fragment">duplication of effort</li>
+<li class="fragment">recipe fragmentation</li>
+<li class="fragment">unstable environments when mixing and matching packages from different channels.</li>
+</ul>
+</section>
+<section id="some-background" class="slide level1">
+<h1>Some background</h1>
+<ul>
+<li class="fragment">The scientific community adopted conda</li>
+<li class="fragment">Many channels popped up: <code>ioos</code>, <code>scitools</code>, <code>bioconda</code>, <code>astropy</code>, etc.</li>
+<li class="fragment">Tons of duplicated effort, fork confusion, bit rot...</li>
+</ul>
+<div class="fragment">
+<p>See <a href="http://wesmckinney.com/blog/conda-forge-centos-moment" class="uri">http://wesmckinney.com/blog/conda-forge-centos-moment</a> for more on conda-forge</p>
+</div>
+<div class="fragment">
+<p>(Yeah... Wes was quicker than us to write about it!)</p>
+</div>
+<div class="fragment">
+<p>But we finally got our post out in time for DMAC!</p>
+<p><a href="https://www.continuum.io/blog/developer-blog/community-conda-forge" class="uri">https://www.continuum.io/blog/developer-blog/community-conda-forge</a></p>
+</div>
+</section>
+<section id="the-solution" class="slide level1">
+<h1>The solution</h1>
+<p>The <code>conda-forge</code> organization was created to be transparent, open, and community led. The goal is to provide a stable source for packages while reducing the effort duplication and recipe fragmentation.</p>
+<div class="fragment">
+<p>While developed to meet the unique needs of scientific software developers, it is a system that brings features and utilities for the broader developer community.</p>
+</div>
+</section>
+<section id="what-do-we-mean-by-community" class="slide level1">
+<h1>What do we mean by community?</h1>
+<ul>
+<li class="fragment">The channel <strong>is</strong> community-governed: <strong>open</strong> by-weekly meetings, and <strong>transparent</strong> discussions on GitHub (still working on a <strong>CoD</strong>)</li>
+<li class="fragment">Open meeting minutes: <a href="https://conda-forge.hackpad.com/" class="uri">https://conda-forge.hackpad.com/</a></li>
+<li class="fragment">All the tools used to built the binaries are published and available.</li>
+</ul>
+<div class="fragment">
+<p>There is a vetting process for submitting, verifying, and storing <del>signed</del> releases.</p>
+</div>
+</section>
+<section id="the-conda-forge-channel" class="slide level1">
+<h1>The conda-forge <a href="http://anaconda.org/conda-forge">channel</a></h1>
+<ul>
+<li class="fragment"><del>70</del> 102 contributors</li>
+<li class="fragment"><del>432</del> 579 packages (IOOS: 224, SciTools: 27)</li>
+<li class="fragment">Available platforms: <strong>Linux-64</strong>, <strong>Windows-32/64</strong>, and <strong>OS X</strong></li>
+<li class="fragment">Use with</li>
+</ul>
+<div class="fragment">
+<pre class="shell"><code>conda install -c conda-forge gdal</code></pre>
+</div>
+<div class="fragment">
+<pre class="shell"><code>conda config --add channels conda-forge</code></pre>
+</div>
+</section>
+<section id="distributed-vs-the-centralized-model" class="slide level1">
+<h1>Distributed vs the centralized model</h1>
+<ul>
+<li class="fragment">Individual repositories (<strong>feedstocks</strong>)</li>
+<li class="fragment">Teams of <strong>maintainers</strong> for each feedstock</li>
+<li class="fragment">Python scripts as <strong>Heroku</strong> webservices to tie everything together</li>
+</ul>
+</section>
+<section id="builds" class="slide level1">
+<h1>Builds</h1>
+<ul>
+<li class="fragment">The recipes are hosted on its own feedstock <a href="https://github.com/conda-forge/feedstocks/tree/master/feedstocks">GitHub</a></li>
+<li class="fragment"><a href="http://www.appveyor.com/">AppVeyor</a> ➛ Windows</li>
+<li class="fragment"><a href="https://travis-ci.org/">Travis-CI</a> ➛ OS X</li>
+<li class="fragment"><a href="https://registry.hub.docker.com/u/ocefpaf/centos64-conda-obvious-ci/">CircleCI+Docker</a> ➛ Linux (CentOS 5)</li>
+</ul>
+</section>
+<section id="automation" class="slide level1">
+<h1><a href="https://github.com/conda-forge/conda-forge.github.io/tree/master/scripts">Automation</a></h1>
+<ul>
+<li class="fragment">The point of entry is <a href="https://github.com/conda-forge/staged-recipes">staged-recipes</a></li>
+<li class="fragment">The tooling lives in <a href="https://github.com/conda-forge/conda-smithy">conda-smithy</a></li>
+<li class="fragment">Once the PR is accepted a GitHub <strong>team</strong> is created based on the <strong>maintainers list</strong></li>
+<li class="fragment">The maintainers have <strong>commit rights</strong> only to their <strong>own</strong> recipes</li>
+</ul>
+</section>
+<section id="linter" class="slide level1">
+<h1><a href="https://github.com/conda-forge/conda-forge-webservices/tree/master/conda_forge_webservices">Linter</a></h1>
+<figure>
+<img src="images/github_linter.png" />
+</figure>
+<pre class="shell"><code>conda smithy recipe-lint</code></pre>
+</section>
+<section id="updating-a-feedstock" class="slide level1">
+<h1>Updating a feedstock</h1>
+<figure>
+<img src="images/github_rerender.png" />
+</figure>
+<pre class="shell"><code>conda smithy rerender</code></pre>
+</section>
+<section id="issues" class="slide level1">
+<h1>Issues</h1>
+<figure>
+<img src="images/github_issues.png" />
+</figure>
+</section>
+<section id="how-to-contribute" class="slide level1">
+<h1>How to contribute?</h1>
+<ul>
+<li class="fragment">Report problems</li>
+<li class="fragment">Request packages or new releases</li>
+<li class="fragment">Send PRs adding/fixing packages</li>
+</ul>
+</section>
+<section id="submitting-a-new-recipe" class="slide level1">
+<h1>Submitting a new recipe</h1>
+<ul>
+<li class="fragment">Fork <a href="https://github.com/conda-forge/staged-recipes" class="uri">https://github.com/conda-forge/staged-recipes</a></li>
+<li class="fragment">Submit the PR</li>
+<li class="fragment">The recipe will be built and, once merged, it will trigger the creation of the feedstock repository</li>
+<li class="fragment">In the feedstock repo, the recipe will be re-built and uploaded to the conda-forge channel on anaconda.org</li>
+</ul>
+</section>
+<section id="updating-a-recipe" class="slide level1">
+<h1>Updating a recipe</h1>
+<figure>
+<img src="images/github_maintaince.png" />
+</figure>
+</section>
+<section id="the-changes" class="slide level1">
+<h1>The changes</h1>
+<figure>
+<img src="images/github_maintaince_changes.png" />
+</figure>
+</section>
+<section id="provenance" class="slide level1">
+<h1>Provenance</h1>
+<figure>
+<img src="images/github_provenance.png" />
+</figure>
+</section>
+<section id="how-to-find-us" class="slide level1">
+<h1>How to find <a href="https://github.com/orgs/conda-forge/people">us</a>?</h1>
+<p><a href="https://github.com/conda-forge">Github</a></p>
+<p><a href="https://gitter.im/conda-forge/conda-forge.github.io">Gitter</a></p>
+<p><a href="https://groups.google.com/forum/#!forum/conda-forge">Mailing list</a></p>
+</section>
+<section id="questions" class="slide level1">
+<h1>Questions?</h1>
+<figure>
+<img src="http://imgs.xkcd.com/comics/tools.png" />
+</figure>
+<p><a href="http://xkcd.com/1629/" class="uri">http://xkcd.com/1629/</a></p>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
