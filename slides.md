@@ -7,7 +7,7 @@
 # The problem
 
 The **Python scientific community** always wanted a package manager that is **cross platform**,
-does not require **sudo**, and let's Python be awesome ;-)
+does not require **sudo**, and lets Python be awesome ;-)
 
 The conda package manager solved that problem, but created a new ones...
 
@@ -166,6 +166,4 @@ conda smithy rerender
 
 # Questions?
 
-![](http://imgs.xkcd.com/comics/tools.png)
-
-[http://xkcd.com/1629/](http://xkcd.com/1629/)
+<iframe width="480" height="640" src="https://conda-forge.github.io/feedstocks.html" frameborder="0" allowfullscreen></iframe>
