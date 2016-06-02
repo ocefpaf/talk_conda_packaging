@@ -1,4 +1,4 @@
-## SciPyLA 2016 presentations
+## DMAC 2016 presentations
 ### conda-forge
 
 Rendered versions:
