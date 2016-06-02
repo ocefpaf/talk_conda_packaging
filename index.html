@@ -37,8 +37,14 @@
 <p>The <strong>Python scientific community</strong> always wanted a package manager that is <strong>cross platform</strong>, does not require <strong>sudo</strong>, and lets Python be awesome ;-)</p>
 <p>The conda package manager solved that problem, but created a new ones...</p>
 </section>
-<section id="the-problem-1" class="slide level1">
-<h1>The problem</h1>
+<section id="why-not-wheels" class="slide level1">
+<h1>Why not wheels?</h1>
+<figure>
+<img src="images/wheels.png" />
+</figure>
+</section>
+<section id="more-about-the-problem" class="slide level1">
+<h1>More about the problem</h1>
 <ul>
 <li class="fragment">How to get software that is not in the <code>default</code> channel?</li>
 <li class="fragment">How to build the binaries to ensure they are compatible with other systems, and the default channel?</li>
@@ -58,6 +64,13 @@
 <li class="fragment">unstable environments when mixing and matching packages from different channels.</li>
 </ul>
 </section>
+<section id="the-solution" class="slide level1">
+<h1>The solution</h1>
+<p>The <code>conda-forge</code> organization was created to be transparent, open, and community led. The goal is to provide a stable source for packages while reducing the effort duplication and recipe fragmentation.</p>
+<div class="fragment">
+<p>While developed to meet the unique needs of scientific software developers, it is a system that brings features and utilities for the broader developer community.</p>
+</div>
+</section>
 <section id="some-background" class="slide level1">
 <h1>Some background</h1>
 <ul>
@@ -76,13 +89,6 @@
 <p><a href="https://www.continuum.io/blog/developer-blog/community-conda-forge" class="uri">https://www.continuum.io/blog/developer-blog/community-conda-forge</a></p>
 </div>
 </section>
-<section id="the-solution" class="slide level1">
-<h1>The solution</h1>
-<p>The <code>conda-forge</code> organization was created to be transparent, open, and community led. The goal is to provide a stable source for packages while reducing the effort duplication and recipe fragmentation.</p>
-<div class="fragment">
-<p>While developed to meet the unique needs of scientific software developers, it is a system that brings features and utilities for the broader developer community.</p>
-</div>
-</section>
 <section id="what-do-we-mean-by-community" class="slide level1">
 <h1>What do we mean by community?</h1>
 <ul>
@@ -97,8 +103,8 @@
 <section id="the-conda-forge-channel" class="slide level1">
 <h1>The conda-forge <a href="http://anaconda.org/conda-forge">channel</a></h1>
 <ul>
-<li class="fragment"><del>70</del> 102 contributors</li>
-<li class="fragment"><del>432</del> 579 packages (IOOS: 224, SciTools: 27)</li>
+<li class="fragment"><del>70</del> <del>102</del> 104 contributors</li>
+<li class="fragment"><del>432</del> <del>579</del> 583 packages (IOOS: 224, SciTools: 27)</li>
 <li class="fragment">Available platforms: <strong>Linux-64</strong>, <strong>Windows-32/64</strong>, and <strong>OS X</strong></li>
 <li class="fragment">Use with</li>
 </ul>
@@ -188,6 +194,12 @@
 <h1>Provenance</h1>
 <figure>
 <img src="images/github_provenance.png" />
+</figure>
+</section>
+<section id="conda-forge-outside-ioos" class="slide level1">
+<h1>conda-forge outside IOOS</h1>
+<figure>
+<img src="images/cf-fiona.png" />
 </figure>
 </section>
 <section id="how-to-find-us" class="slide level1">

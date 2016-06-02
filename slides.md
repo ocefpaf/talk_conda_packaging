@@ -11,7 +11,11 @@ does not require **sudo**, and lets Python be awesome ;-)
 
 The conda package manager solved that problem, but created a new ones...
 
-# The problem
+# Why not wheels?
+
+![](images/wheels.png)
+
+# More about the problem
 
 > - How to get software that is not in the `default` channel?
 > - How to build the binaries to ensure they are compatible with other systems, and the default channel?
@@ -28,6 +32,17 @@ That led to
 > - duplication of effort
 > - recipe fragmentation
 > - unstable environments when mixing and matching packages from different channels.
+
+# The solution
+
+The `conda-forge` organization was created to be transparent,
+open, and community led.
+The goal is to provide a stable source for packages while reducing the effort duplication and recipe fragmentation.
+
+. . .
+
+While developed to meet the unique needs of scientific software developers,
+it is a system that brings features and utilities for the broader developer community.
 
 # Some background
 
@@ -49,17 +64,6 @@ But we finally got our post out in time for DMAC!
 
 [https://www.continuum.io/blog/developer-blog/community-conda-forge](https://www.continuum.io/blog/developer-blog/community-conda-forge)
 
-# The solution
-
-The `conda-forge` organization was created to be transparent,
-open, and community led.
-The goal is to provide a stable source for packages while reducing the effort duplication and recipe fragmentation.
-
-. . .
-
-While developed to meet the unique needs of scientific software developers,
-it is a system that brings features and utilities for the broader developer community.
-
 # What do we mean by community?
 
 > - The channel **is** community-governed: **open** by-weekly meetings, and **transparent** discussions on GitHub (still working on a **CoD**)
@@ -72,8 +76,8 @@ There is a vetting process for submitting, verifying, and storing ~~signed~~ rel
 
 # The conda-forge [channel](http://anaconda.org/conda-forge)
 
-> - ~~70~~ 102 contributors
-> - ~~432~~ 579 packages (IOOS: 224, SciTools: 27)
+> - ~~70~~ ~~102~~ 104 contributors
+> - ~~432~~ ~~579~~ 583 packages (IOOS: 224, SciTools: 27)
 > - Available platforms: **Linux-64**, **Windows-32/64**, and **OS X**
 > - Use with
 
@@ -154,6 +158,10 @@ conda smithy rerender
 # Provenance
 
 ![](images/github_provenance.png)
+
+# conda-forge outside IOOS
+
+![](images/cf-fiona.png)
 
 # How to find [us](https://github.com/orgs/conda-forge/people)?
 
